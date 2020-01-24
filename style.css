@@ -1,0 +1,24 @@
+body {
+    background-color: #222222 ;
+    color: #3faba4;
+}
+
+a {
+    text-decoration: none;
+    color: #f7efe5;
+}
+
+.quiz, .summary {
+    display: none;
+}
+
+.quiz ul {
+    list-style: none;
+    cursor: pointer;
+
+}
+
+.selected {
+    background-color: #fd5825;
+}
+
