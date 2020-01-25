@@ -1,4 +1,5 @@
 // variables and arrays
+
 var score = 0
 var currentQuestion = 0
 var questions = [
@@ -13,69 +14,68 @@ var questions = [
 
     {
         title: "What does HTML stand for?",
-        answers: ['Hey Tom Meet Linda', 'HyperText Markup Language', 'HyperText Missing Link', 'Harry Tom Making Lasagna'],
+        answers: ['Hey Tom Meet Linda', 'HyperText Markup Language', 'HyperText Missing Link', 'Hey Tony Making Lasagna'],
         correct: 1
 
     },
 
     {
-        title: "What is CSS?",
-        answers: ['Enhances your website with glorious Aesthetics', 'Gives your grandmother baking lessons', 'Orders pizza for you', 'Why is this even a question'],
+        title: "What does CSS enhance?",
+        answers: ['Enchances website aesthetics', 'Gives your grandmother baking lessons', 'Orders pizza for you', 'Why is this even a question'],
         correct: 0
 
     },
 
     {
         title: "What is bootstrap?",
-        answers: ['The pirate known as Bootstrap Jones, duh', 'Tying your boots together', 'Straps on your boots stooopid', 'A CSS Framework'],
+        answers: ['Bootstrap Jones, duh', 'Tying your boots together', 'Boot straps stooopid', 'A CSS Framework'],
         correct: 3
 
     },
 
     {
-        title: "what's your Gf's/Bf's favorite food?",
+        title: "What's your Gf's/Bf's favorite food?",
         answers: ['Im his/her favorite snack', 'People still ask those questions', 'I eat everything', 'I dont eat, period'],
         correct: 0
 
     },
 
     {
-        title: "what does the word NERD stand for",
+        title: "What does the word NERD stand for?",
         answers: ['Not Even Remotely Dorky', 'Nobody Ever Really Dies', 'Never Ending Research Dude', 'All the above'],
         correct: 3
 
     },
 
     {
-        title: "Who is 007",
+        title: "Who is 007?",
         answers: ['Michael Anthony Myers', 'James Bond', 'Chuck Norris', 'Big Bird'],
         correct: 1
 
     },
 
     {
-        title: "What is the nastiest thing you've ever smelled",
+        title: "What is the nastiest thing you've ever smelled?",
         answers: ['Roses', 'My Grandmother', 'My own farts', 'Baby powder'],
         correct: 2
 
     },
 
     {
-        title: "What is a sexy name",
+        title: "What is a sexy name?",
         answers: ['Michael', 'Jeffrey', 'Jacoby', 'Linda'],
         correct: 0
 
     },
 
     {
-        title: "I'm smart because",
+        title: "I'm smart because...",
         answers: ['I kill two stones with one bird', 'I can fart out the Alphabets', 'I can say 1000 words without opening my mouth', 'All the above'],
         correct: 3
 
     },
 
 ];
-
 
 // Event Listener and functions
 
@@ -122,10 +122,10 @@ $(document).ready(function() {
 function showQuestion() {
     c = 20;
     if (c < 1) {
+        window.clearInterval(update)
         $('.quiz').hide();
         $('.summary').show();
         $('.summary p').text("You ran out of time");
-        setInterval("timer()", 10000);
     }
 
     var question = questions[currentQuestion];
@@ -160,8 +160,7 @@ var a = 0;
 a++;
 var b = 0;
 b++;
-var c = 20;
-c++;
+
 
 // Timer Function
 
@@ -187,8 +186,11 @@ function showSummary() {
     $('.summary p').text("You Scored " + score + " out of " + questions.length + " points ");
 
 }
-setInterval("timer()", 1000 + 2);
-if (distance < 0) {
-    clearInterval("timer()");
+update = setInterval("timer()", 2000 + 2);
+if (secondsLeft <= 0) {
+    clearInterval(interval);
 
+    function repeat() {
+        location.reload();
+    }
 }
