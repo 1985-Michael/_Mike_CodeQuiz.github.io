@@ -87,6 +87,7 @@ $(document).ready(function() {
         $('.quiz').show();
         showQuestion();
 
+
     });
 
     $('.quiz ul').on('click', 'li', function() {
@@ -178,6 +179,8 @@ function timer() {
 
 
     }
+
+
 }
 
 function showSummary() {
