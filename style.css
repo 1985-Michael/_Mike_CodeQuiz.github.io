@@ -18,9 +18,9 @@ body {
 
 #startbutton {
     grid-column: 2;
-    background-color: #fd5825;
+    background-color: #ff7b00;
     height: 30px;
-    border-radius: 20px;
+    border-radius: 10px;
     text-align: center;
     padding: 30px;
     padding-bottom: 20px;
@@ -30,7 +30,7 @@ body {
 
 #button {
     grid-column: 2;
-    background-color: #fd5825;
+    background-color: #ff7b00;
     height: 20px;
     width: 80px;
     border-radius: 10px;
@@ -40,6 +40,12 @@ body {
     font-size: 18px;
     margin-left: 40px;
     text-align: center;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+#button:hover {
+    opacity: 1
 }
 
 #time {
@@ -60,7 +66,7 @@ body {
         box-shadow: 0 0 0 0 rgb(255, 255, 255);
     }
     75% {
-        transform: scale(1.7);
+        transform: scale(1.8);
         color: #fd5825;
     }
     100% {
@@ -82,6 +88,7 @@ h2 {
 a {
     text-decoration: none;
     color: #f7efe5;
+    font-size: 20px;
 }
 
 p {
@@ -101,8 +108,8 @@ p {
 }
 
 .selected {
-    color: #fd5825;
-    border-left: 3px solid #fd5825;
-    font-style: italic;
+    color: #ff7b00;
+    border-left: 2px solid #1c20ff;
+    font-style: oblique;
     font-size: 26px;
 }
